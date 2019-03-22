@@ -20,10 +20,14 @@ import experiments
 
 def pairwise_dist_corr(x1, x2):
     assert x1.shape[0] == x2.shape[0]
-
+    print('computing d1')
     d1 = pairwise_distances(x1)
+    print('computing d2')
     d2 = pairwise_distances(x2)
-    return np.corrcoef(d1.ravel(), d2.ravel())[0, 1]
+    
+    result = np.corrcoef(d1.ravel(), d2.ravel())[0, 1]
+    print('after getting result')
+    return result
 
 
 def reconstruction_error(projections, x):
@@ -69,12 +73,15 @@ class RPExperiment(experiments.BaseExperiment):
 
         # TODO: Use a diff random state? Might be ok as-is
         # %% Data for 1
-        tmp = defaultdict(dict)
-        for i, dim in product(range(10), self._dims):
-            rp = SparseRandomProjection(random_state=i, n_components=dim)
-            tmp[dim][i] = pairwise_dist_corr(rp.fit_transform(self._details.ds.training_x), self._details.ds.training_x)
-        tmp = pd.DataFrame(tmp).T
-        tmp.to_csv(self._out.format('{}_scree1.csv'.format(self._details.ds_name)))
+        #tmp = defaultdict(dict)
+        #for i, dim in product(range(10), self._dims):
+        #    rp = SparseRandomProjection(random_state=i, n_components=dim)
+        #    rp_array = rp.fit_transform(self._details.ds.training_x)
+        #    tmp[dim][i] = pairwise_dist_corr(rp_array, self._details.ds.training_x)
+        
+        #tmp = pd.DataFrame(tmp).T
+        
+        #tmp.to_csv(self._out.format('{}_scree1.csv'.format(self._details.ds_name)))
 
         tmp = defaultdict(dict)
         for i, dim in product(range(10), self._dims):

@@ -96,13 +96,13 @@ class BaseExperiment(ABC):
         return gs, best_estimator  #, final_estimator
 
     def dump_for_clustering(self, learning_func):
-        hdf_path = self._out.format('datasets.hdf')
+        hdf_path = self._out.format('datasets'+self._details.ds_name+'.csv')
         ds_features = learning_func(self)
         ds_2 = pd.DataFrame(np.hstack((ds_features, np.atleast_2d(self._details.ds.training_y).T)))
         cols = list(range(ds_2.shape[1]))
         cols[-1] = 'Class'
         ds_2.columns = cols
-        ds_2.to_hdf(hdf_path, self._details.ds_name, complib='blosc', complevel=9)
+        ds_2.to_csv(hdf_path)
         return hdf_path
 
     def log(self, msg, *args):

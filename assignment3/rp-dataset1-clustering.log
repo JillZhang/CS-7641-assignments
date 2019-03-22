@@ -1,0 +1,121 @@
+//anaconda/envs/py35/lib/python3.5/site-packages/matplotlib/colors.py:680: MatplotlibDeprecationWarning: The is_string_like function was deprecated in version 2.1.
+  not cbook.is_string_like(colors[0]):
+2019-03-15 18:50:43,626 - __main__ - INFO - Using seed 2394066389
+2019-03-15 18:50:43,626 - __main__ - INFO - Loading data
+2019-03-15 18:50:43,626 - __main__ - INFO - ----------
+2019-03-15 18:50:44,599 - data.loader - INFO - Processing shelter Path: data/data.csv, Dimensions: (79422, 86)
+2019-03-15 18:50:44,920 - data.loader - INFO - Data Sample:
+       age_upon_outcome_(years)  outcome_hour   ...    dogbreed_Maltese  target
+0                     10.000000             0   ...                   0       1
+1                      7.000000            16   ...                   0       1
+2                      6.000000            17   ...                   0       1
+3                     10.000000            15   ...                   0       0
+4                     16.000000            11   ...                   0       1
+...                         ...           ...   ...                 ...     ...
+79417                  0.038356            18   ...                   0       0
+79418                  2.000000            18   ...                   0       0
+79419                  1.000000            18   ...                   0       0
+79420                  0.821918            12   ...                   0       1
+79421                 10.000000            13   ...                   0       0
+
+[79422 rows x 86 columns]
+2019-03-15 18:50:44,920 - data.loader - INFO - Will pre-process data
+2019-03-15 18:50:44,920 - data.loader - INFO - Pulling features
+2019-03-15 18:50:45,094 - data.loader - INFO - Pulling classes
+2019-03-15 18:50:45,095 - data.loader - INFO - Feature dimensions: (79422, 85)
+2019-03-15 18:50:45,095 - data.loader - INFO - Classes dimensions: (79422,)
+2019-03-15 18:50:45,098 - data.loader - INFO - Class values: [0 1]
+2019-03-15 18:50:45,112 - data.loader - INFO - Class distribution: [31037 48385]
+2019-03-15 18:50:45,112 - data.loader - INFO - Class distribution (%): [39.07859283 60.92140717]
+2019-03-15 18:50:45,112 - data.loader - INFO - Sparse? False
+2019-03-15 18:50:45,133 - data.loader - INFO - Binary? True
+2019-03-15 18:50:45,133 - data.loader - INFO - Balanced? True
+2019-03-15 18:50:45,709 - __main__ - INFO - ----------
+2019-03-15 18:50:45,709 - __main__ - INFO - Running experiments
+2019-03-15 18:50:45,709 - __main__ - INFO - Running with dimension 10
+2019-03-15 18:50:45,709 - __main__ - INFO -  Details: ExperimentDetails(ds=<data.loader.Shelter object at 0x122839320>, ds_name=shelter, ds_readable_name=shelter_read, best_nn_params={'NN__learning_rate_init': [0.016], 'NN__hidden_layer_sizes': [(100, 100)], 'NN__alpha': [1.0], 'NN__activation': ['relu']}, threads=-1, seed=2394066389)
+2019-03-15 18:50:45,709 - experiments.base - INFO - Running clustering for RP with dim param 10
+Fitting 5 folds for each of 1 candidates, totalling 5 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=-1)]: Done   2 out of   5 | elapsed:   28.6s remaining:   42.9s
+[Parallel(n_jobs=-1)]: Done   3 out of   5 | elapsed:   36.3s remaining:   24.2s
+[Parallel(n_jobs=-1)]: Done   5 out of   5 | elapsed:   51.7s remaining:    0.0s
+[Parallel(n_jobs=-1)]: Done   5 out of   5 | elapsed:   51.7s finished
+2019-03-15 18:52:14,692 - experiments.base - INFO - Running clustering sub-experiment
+2019-03-15 18:52:14,712 - data.loader - INFO - Reloading from HDF ./output/RP/datasets.hdf
+2019-03-15 18:52:15,182 - data.loader - INFO - Processing shelter Path: data/data.csv, Dimensions: (55595, 11)
+2019-03-15 18:52:15,220 - data.loader - INFO - Data Sample:
+               0         1         2  ...           8         9  Class
+0       0.137170 -0.780328  0.371672  ...   -1.515409 -0.152464    0.0
+1       0.137170 -1.269697  0.371672  ...    0.489221 -0.152464    1.0
+2       0.137170 -1.269697  0.371672  ...   -1.515409 -0.152464    0.0
+3       0.137170  0.669474  0.371672  ...    0.489221 -4.584434    1.0
+4       0.137170 -1.774303  0.371672  ...   -1.515409 -0.152464    1.0
+...          ...       ...       ...  ...         ...       ...    ...
+55590   0.137170  0.669474  0.371672  ...   -1.515409 -0.152464    1.0
+55591   0.137170  0.669474  0.371672  ...    0.407434 -0.152464    1.0
+55592   0.137170  0.669474  0.371672  ...    0.489221 -0.152464    1.0
+55593   0.137170  1.663448  0.371672  ...   -1.515409 -0.152464    0.0
+55594  13.265456  0.669474  0.371672  ...   -1.515409 -0.152464    0.0
+
+[55595 rows x 11 columns]
+2019-03-15 18:52:15,220 - data.loader - INFO - Pulling features
+2019-03-15 18:52:15,226 - data.loader - INFO - Pulling classes
+2019-03-15 18:52:15,227 - data.loader - INFO - Feature dimensions: (55595, 10)
+2019-03-15 18:52:15,227 - data.loader - INFO - Classes dimensions: (55595,)
+2019-03-15 18:52:15,230 - data.loader - INFO - Class values: [0. 1.]
+2019-03-15 18:52:15,234 - data.loader - INFO - Class distribution: [21726 33869]
+2019-03-15 18:52:15,234 - data.loader - INFO - Class distribution (%): [39.07905387 60.92094613]
+2019-03-15 18:52:15,235 - data.loader - INFO - Sparse? False
+2019-03-15 18:52:15,248 - data.loader - INFO - Binary? True
+2019-03-15 18:52:15,248 - data.loader - INFO - Balanced? True
+2019-03-15 18:52:15,280 - experiments.base - INFO - Performing clustering as part of RP
+2019-03-15 18:54:27,586 - experiments.base - INFO - Cluster: 2, time: 151.643547
+[CV] NN__activation=relu, NN__learning_rate_init=0.016, NN__hidden_layer_sizes=(100, 100), NN__alpha=1.0 
+[CV]  NN__activation=relu, NN__learning_rate_init=0.016, NN__hidden_layer_sizes=(100, 100), NN__alpha=1.0, score=0.7778577262267097, total=  21.1s
+//anaconda/envs/py35/lib/python3.5/site-packages/matplotlib/colors.py:680: MatplotlibDeprecationWarning: The is_string_like function was deprecated in version 2.1.
+  not cbook.is_string_like(colors[0]):
+[CV] NN__learning_rate_init=0.016, NN__activation=relu, NN__alpha=1.0, NN__hidden_layer_sizes=(100, 100) 
+[CV]  NN__learning_rate_init=0.016, NN__activation=relu, NN__alpha=1.0, NN__hidden_layer_sizes=(100, 100), score=0.7799427717771497, total=  28.9s
+//anaconda/envs/py35/lib/python3.5/site-packages/matplotlib/colors.py:680: MatplotlibDeprecationWarning: The is_string_like function was deprecated in version 2.1.
+  not cbook.is_string_like(colors[0]):
+[CV] NN__alpha=1.0, NN__hidden_layer_sizes=(100, 100), NN__learning_rate_init=0.016, NN__activation=relu 
+[CV]  NN__alpha=1.0, NN__hidden_layer_sizes=(100, 100), NN__learning_rate_init=0.016, NN__activation=relu, score=0.7789908820124873, total=  32.3s
+//anaconda/envs/py35/lib/python3.5/site-packages/matplotlib/colors.py:680: MatplotlibDeprecationWarning: The is_string_like function was deprecated in version 2.1.
+  not cbook.is_string_like(colors[0]):
+[CV] NN__hidden_layer_sizes=(100, 100), NN__learning_rate_init=0.016, NN__alpha=1.0, NN__activation=relu 
+[CV]  NN__hidden_layer_sizes=(100, 100), NN__learning_rate_init=0.016, NN__alpha=1.0, NN__activation=relu, score=0.7761150652854972, total=  19.9s
+[CV] NN__hidden_layer_sizes=(100, 100), NN__learning_rate_init=0.016, NN__alpha=1.0, NN__activation=relu 
+[CV]  NN__hidden_layer_sizes=(100, 100), NN__learning_rate_init=0.016, NN__alpha=1.0, NN__activation=relu, score=0.7766242018629103, total=  24.1s
+//anaconda/envs/py35/lib/python3.5/site-packages/matplotlib/colors.py:680: MatplotlibDeprecationWarning: The is_string_like function was deprecated in version 2.1.
+  not cbook.is_string_like(colors[0]):
+2019-03-15 18:56:38,428 - experiments.base - INFO - Cluster: 3, time: 301.79886899999997
+2019-03-15 18:58:46,450 - experiments.base - INFO - Cluster: 4, time: 449.858785
+Traceback (most recent call last):
+  File "run_experiment.py", line 153, in <module>
+    verbose, timings)
+  File "run_experiment.py", line 33, in run_experiment
+    exp.perform_cluster(dim)
+  File "/Users/jillzhang/Documents/CS-7641-assignments/assignment3/experiments/RP.py", line 121, in perform_cluster
+    experiments.run_subexperiment(self, self._out.format('clustering/'), updated_ds)
+  File "/Users/jillzhang/Documents/CS-7641-assignments/assignment3/experiments/__init__.py", line 68, in run_subexperiment
+    return ce.perform_for_subexperiment(out, main_experiment)
+  File "/Users/jillzhang/Documents/CS-7641-assignments/assignment3/experiments/clustering.py", line 66, in perform_for_subexperiment
+    return self.__do_perform(custom_out=custom_out, main_experiment=main_experiment)
+  File "/Users/jillzhang/Documents/CS-7641-assignments/assignment3/experiments/clustering.py", line 107, in __do_perform
+    sil[k]['Kmeans'] = sil_score(self._details.ds.training_x, km_labels)
+  File "//anaconda/envs/py35/lib/python3.5/site-packages/sklearn/metrics/cluster/unsupervised.py", line 117, in silhouette_score
+    return np.mean(silhouette_samples(X, labels, metric=metric, **kwds))
+  File "//anaconda/envs/py35/lib/python3.5/site-packages/sklearn/metrics/cluster/unsupervised.py", line 223, in silhouette_samples
+    **kwds))
+  File "//anaconda/envs/py35/lib/python3.5/site-packages/sklearn/metrics/pairwise.py", line 1282, in pairwise_distances_chunked
+    n_jobs=n_jobs, **kwds)
+  File "//anaconda/envs/py35/lib/python3.5/site-packages/sklearn/metrics/pairwise.py", line 1402, in pairwise_distances
+    return _parallel_pairwise(X, Y, func, n_jobs, **kwds)
+  File "//anaconda/envs/py35/lib/python3.5/site-packages/sklearn/metrics/pairwise.py", line 1069, in _parallel_pairwise
+    return func(X, Y, **kwds)
+  File "//anaconda/envs/py35/lib/python3.5/site-packages/sklearn/metrics/pairwise.py", line 247, in euclidean_distances
+    distances = safe_sparse_dot(X, Y.T, dense_output=True)
+  File "//anaconda/envs/py35/lib/python3.5/site-packages/sklearn/utils/extmath.py", line 173, in safe_sparse_dot
+    return np.dot(a, b)
+KeyboardInterrupt
